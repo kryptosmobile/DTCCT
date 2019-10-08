@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "394439966590",
+    "firebase_url": "https://pct-mobile-1c0a5.firebaseio.com",
+    "project_id": "pct-mobile-1c0a5",
+    "storage_bucket": "pct-mobile-1c0a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394439966590:android:9ae8c8ef780c4ab7993d2f",
+        "android_client_info": {
+          "package_name": "com.kryptosmobile.DTCC"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394439966590-jvajf52hr1i60n8aa3cq71c7umg4r1ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb1gHsAnuSkTGPURLPlIsmmUq8_VlIG1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394439966590-jvajf52hr1i60n8aa3cq71c7umg4r1ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394439966590:android:69dfa1d2823e0593",
+        "android_client_info": {
+          "package_name": "com.kryptosmobile.PCT"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394439966590-jvajf52hr1i60n8aa3cq71c7umg4r1ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb1gHsAnuSkTGPURLPlIsmmUq8_VlIG1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394439966590-jvajf52hr1i60n8aa3cq71c7umg4r1ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394439966590:android:29984346a64e1b08993d2f",
+        "android_client_info": {
+          "package_name": "com.kryptosmobile.tyndale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394439966590-jvajf52hr1i60n8aa3cq71c7umg4r1ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb1gHsAnuSkTGPURLPlIsmmUq8_VlIG1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394439966590-jvajf52hr1i60n8aa3cq71c7umg4r1ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
