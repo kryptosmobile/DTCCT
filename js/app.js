@@ -945,6 +945,7 @@ sound: "true"
        }
                 
                 MyCampusApp.rootScope.push.on('registration', function(data) {
+			alert("registeration call 948"+ JSON.stringify(data));
                                               var devicePushID = data.registrationId;
                                               var pushDeviceData = {
                                               "tenant": MyCampusApp.rootScope.tenant,
@@ -961,11 +962,11 @@ sound: "true"
                                                     });
                                               
                                               });
-                MyCampusApp.rootScope.push.on("notification", function(data) {
+             /*   MyCampusApp.rootScope.push.on("notification", function(data) {
 
         navigator.notification.alert(data.message, null, data.title, 'Ok');
 
-      });
+      });*/
             }
         } catch (e) { 
             //alert(e)
