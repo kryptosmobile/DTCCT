@@ -898,20 +898,17 @@ var MyCampusApp = {
     },
     
 activatePushNotification : function(tenantId,$http) {
-        
+        alert("activatePushNotification"+ tenantId);
 		try {
             var gcmSenderID = "394439966590"; // Comment this line once we have added upgraded our platform to send push.
-            if ($.jStorage.get("deviceID") == null || $.jStorage.get("deviceID") == undefined) {
+                        if ($.jStorage.get("deviceID") == null || $.jStorage.get("deviceID") == undefined) {
                 MyCampusApp.rootScope.push = PushNotification.init({
                                                                    android: {
-																	senderID: gcmSenderID,
-icon: "myicon",
-iconColor: "#123456",
-vibrate: "true",
-sound: "true"
-																	
-																   
-																   
+                                                                   senderID: gcmSenderID,
+                                                                           icon: "myicon",
+                                                                           iconColor: "#123456",
+                                                                           vibrate: "true",
+                                                                           sound: "true"
                                                                    },
                                                                    browser: {
                                                                    pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -932,8 +929,8 @@ sound: "true"
              console.log("error");
            },
            {
-             id: "DTCC",
-             description: "DTCC Push Channel",
+             id: "hpuprodu8",
+             description: "myHPU",
              importance: 1,
              vibration: true,
              sound: "default",
@@ -941,11 +938,11 @@ sound: "true"
            }
          );
        } catch (e) {
+	       alert("channel not created");
          console.log("channel not created"+ e);
        }
                 
                 MyCampusApp.rootScope.push.on('registration', function(data) {
-			alert("registeration call 948"+ JSON.stringify(data));
                                               var devicePushID = data.registrationId;
                                               var pushDeviceData = {
                                               "tenant": MyCampusApp.rootScope.tenant,
@@ -955,25 +952,19 @@ sound: "true"
                                               };
                                               $http.post("https://push.kryptosmobile.com/kryptosds/push/adddeviceToChannel", pushDeviceData).success(function(response) {
                                                                                                                                               $.jStorage.set("deviceID", devicePushID);
-                                                                                                                                              //alert(JSON.stringify(response));
+                                                                                                                                              alert(JSON.stringify(response));
                                                                                                                                               }).
                                               error(function(err) {
-                                                    //alert("err" + JSON.stringify(response));
+                                                    alert("err" + JSON.stringify(response));
                                                     });
                                               
                                               });
-             /*   MyCampusApp.rootScope.push.on("notification", function(data) {
-
-        navigator.notification.alert(data.message, null, data.title, 'Ok');
-
-      });*/
             }
         } catch (e) { 
-            //alert(e)
+            alert("error"+ e)
         }
 
- },
-
+    },
 
     logPageAccess : function(tenant, url, $http, appid, appname, pageid) {
         try {
