@@ -898,20 +898,18 @@ var MyCampusApp = {
     },
     
 activatePushNotification : function(tenantId,$http) {
-        
+                alert("activatePushNotification"+ tenantId);
 		try {
             var gcmSenderID = "394439966590"; // Comment this line once we have added upgraded our platform to send push.
             if ($.jStorage.get("deviceID") == null || $.jStorage.get("deviceID") == undefined) {
+		    alert("deviceID get 905");
                 MyCampusApp.rootScope.push = PushNotification.init({
                                                                    android: {
-																	senderID: gcmSenderID,
-icon: "myicon",
-iconColor: "#123456",
-vibrate: "true",
-sound: "true"
-																	
-																   
-																   
+							  senderID: gcmSenderID,
+							icon: "myicon",
+							iconColor: "#123456",
+							vibrate: "true",
+							sound: "true"																   
                                                                    },
                                                                    browser: {
                                                                    pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -926,9 +924,11 @@ sound: "true"
                      try {
          PushNotification.createChannel(
            () => {
+		   alert("create channel call 927");
              console.log("success");
            },
            () => {
+		   alert("channel not created");
              console.log("error");
            },
            {
@@ -941,34 +941,38 @@ sound: "true"
            }
          );
        } catch (e) {
+	       alert("9444==="+ e);
          console.log("channel not created"+ e);
        }
                 
                 MyCampusApp.rootScope.push.on('registration', function(data) {
+			alert("registeration methode call");
                                               var devicePushID = data.registrationId;
+			alert("devicePushID"+ devicePushID);
                                               var pushDeviceData = {
                                               "tenant": MyCampusApp.rootScope.tenant,
                                               "id": devicePushID,
                                               "type": device.platform,
                                               "channel": "all"
                                               };
+			alert("pushDeviceData =="+ pushDeviceData);
                                               $http.post("https://push.kryptosmobile.com/kryptosds/push/adddeviceToChannel", pushDeviceData).success(function(response) {
                                                                                                                                               $.jStorage.set("deviceID", devicePushID);
-                                                                                                                                              //alert(JSON.stringify(response));
+                                                                                                                                              alert("adddevicetoChannel"+JSON.stringify(response));
                                                                                                                                               }).
                                               error(function(err) {
-                                                    //alert("err" + JSON.stringify(response));
+                                                    alert("err 964" + JSON.stringify(response));
                                                     });
                                               
                                               });
                 MyCampusApp.rootScope.push.on("notification", function(data) {
-
+        alert("notification call 969"+ JSON.stringify(data));
         navigator.notification.alert(data.message, null, data.title, 'Ok');
 
       });
             }
         } catch (e) { 
-            //alert(e)
+            alert(e)
         }
 
  },
