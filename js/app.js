@@ -902,6 +902,7 @@ activatePushNotification : function(tenantId,$http) {
 		try {
             var gcmSenderID = "394439966590"; // Comment this line once we have added upgraded our platform to send push.
                         if ($.jStorage.get("deviceID") == null || $.jStorage.get("deviceID") == undefined) {
+				alert("904==push"+ ($.jStorage.get("deviceID"));
                 MyCampusApp.rootScope.push = PushNotification.init({
                                                                    android: {
                                                                    senderID: gcmSenderID,
@@ -923,14 +924,15 @@ activatePushNotification : function(tenantId,$http) {
                      try {
          PushNotification.createChannel(
            () => {
+		   alert("create channel==sucess");
              console.log("success");
            },
            () => {
              console.log("error");
            },
            {
-             id: "hpuprodu8",
-             description: "myHPU",
+             id: "DTCC",
+             description: "DTCC push chennal",
              importance: 1,
              vibration: true,
              sound: "default",
@@ -952,7 +954,7 @@ activatePushNotification : function(tenantId,$http) {
                                               };
                                               $http.post("https://push.kryptosmobile.com/kryptosds/push/adddeviceToChannel", pushDeviceData).success(function(response) {
                                                                                                                                               $.jStorage.set("deviceID", devicePushID);
-                                                                                                                                              alert(JSON.stringify(response));
+                                                                                                                                              alert("push data devicePushID"+ JSON.stringify(response) + "devicePushID"+ devicePushID);
                                                                                                                                               }).
                                               error(function(err) {
                                                     alert("err" + JSON.stringify(response));
