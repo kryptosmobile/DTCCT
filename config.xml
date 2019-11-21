@@ -124,10 +124,10 @@
         
         
          <!-- ios sms plugin -->
-        <plugin spec="https://github.com/DevendraSinghNagar/cordova-sms-all-devices-plugin.git" source="git" />
+        <!--<plugin spec="https://github.com/DevendraSinghNagar/cordova-sms-all-devices-plugin.git" source="git" />-->
 
         <!-- Android sms plugin -->
-        <gap:plugin name="cordova-plugin-sms" source="npm" />
+       <!-- <gap:plugin name="cordova-plugin-sms" source="npm" />-->
         
         
         
